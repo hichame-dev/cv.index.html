@@ -74,6 +74,13 @@
                 font-size: 14px;
             }
 
+            /* Ajustement des icônes sur mobile */
+            .fa, .fas, .far, .fab {
+                margin-right: 8px; /* Marge plus grande sur mobile pour éviter le collage */
+                display: inline-block; /* Assure un bon espacement */
+                vertical-align: middle; /* Alignement vertical amélioré */
+            }
+
             h1 {
                 font-size: 1.75rem;
                 margin-bottom: 1.5rem;
@@ -603,16 +610,31 @@
         }
 
         .tasks li {
-            padding: 2px 0;
+            padding: 4px 0;
             position: relative;
-            padding-left: 15px;
+            padding-left: 18px;
+            line-height: 1.4;
+        }
+
+        @media screen and (max-width: 480px) {
+            .tasks li {
+                padding-left: 20px; /* Plus d'espace pour l'icône sur mobile */
+            }
+            .tasks li:before {
+                font-size: 0.75em; /* Légèrement plus petit sur mobile */
+            }
         }
 
         .tasks li:before {
-            content: "▶";
+            font-family: "Font Awesome 5 Free";
+            content: "\f054"; /* Icône chevron-right de Font Awesome */
+            font-weight: 900;
             color: #667eea;
             position: absolute;
             left: 0;
+            font-size: 0.8em;
+            top: 50%;
+            transform: translateY(-50%);
             animation: blink 2s infinite;
         }
 
